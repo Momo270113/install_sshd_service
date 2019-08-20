@@ -1,4 +1,6 @@
-# install_sshd_service
-automatic installation of the sshd service and add the user on windows 10
+# Installs OpenSSH.Client and OpenSSH.Server. Adds a system user
 
-you use this code at your own risk!
+installs OpenSSH.Client and OpenSSH.Server. 
+Adds a system user and restricts data access rights when connecting via sftp. The new user can only access his / her home folder
+
+tested on Windows 10

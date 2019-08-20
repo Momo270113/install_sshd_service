@@ -13,7 +13,7 @@ Set-Service -Name sshd -StartupType 'Automatic'
 Start-Service ssh-agent
 Start-Service sshd
 
-Restart-Service sshd
+# Change configure setting
 [string]$PathToSshConfig = "C:\ProgramData\ssh\sshd_config"
 (Get-Content $PathToSshConfig) -replace "Match Group","# Match Group" | Out-File $PathToSshConfig -Encoding "UTF8"
 (Get-Content $PathToSshConfig) -replace "AuthorizedKeysFile __PROGRAMDATA","# AuthorizedKeysFile __PROGRAMDATA" | Out-File $PathToSshConfig -Encoding "UTF8"

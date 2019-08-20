@@ -1,4 +1,4 @@
-﻿
+# Check user exist
 [string]$UserName = $(Read-Host "Enter the user name")
 $UserExist = Get-LocalUser | Where-Object {$_.Name -eq "$UserName"}
 $UserExist = "$UserExist"
@@ -30,6 +30,7 @@ If ( -not $UserExist)
 } else {
     Mkdir C:\sftp\$Username
     [string]$PathToSshConfig = "C:\ProgramData\ssh\sshd_config"
+    
     #Add a home directory for the user. Add lines to the end of the sshd_conf file
     "Match User $UserName`
     ChrootDirectory C:\sftp\$Username`
